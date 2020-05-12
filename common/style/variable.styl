@@ -1,0 +1,55 @@
+// 颜色定义规范
+$color-nav-active = #0c5c9d     // 导航栏激活颜色值
+$color-num = #4ab9f7            // 数字颜色
+$color-main = #333              // 主色(主标题)
+$color-main-02 = #678395        // 第二主色(文字描述颜色)
+$color-main-03 = #4986af        // 第三主色(footer底部产品列表标题下划线颜色)
+$color-main-04 = #999           // 第四主色(灰色)
+$color-bd = #c4cfd5             // border颜色值 
+$color-icon = #0c5c9d           // 图标颜色
+$color-even-bg = #f5f8fa        // 偶数行背景色
+$color-footer-bg = #05456f      // 页脚背景色
+
+
+// 层级定义规范
+$zIndex-10 = 10
+$zIndex-100 = 100
+$zIndex-1000 = 1000
+$zIndex-2000 = 2000
+
+// pc自适应函数 1920设计稿宽度
+pcFn($px){
+    $w = 1920
+    return (100 * $px / $w)vw
+}
+
+// 手机自适应函数 750设计稿宽度
+px2rem($px){
+    $rem = 75
+    return ($px / $rem)rem
+}
+border-1px($color = #ccc, $radius = 2PX, $style = solid)
+  position: relative
+  &::after
+    content: ""
+    pointer-events: none
+    display: block
+    position: absolute
+    left: 0
+    top: 0
+    transform-origin: 0 0
+    border: 1PX $style $color
+    border-radius: $radius
+    box-sizing border-box
+    width 100%
+    height 100%
+    @media (min-resolution: 2dppx)
+      width: 200%
+      height: 200%
+      border-radius: $radius * 2
+      transform: scale(.5)
+    @media (min-resolution: 3dppx)
+      width: 300%
+      height: 300%
+      border-radius: $radius * 3
+      transform: scale(.333)
