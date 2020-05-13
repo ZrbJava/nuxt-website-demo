@@ -1,8 +1,8 @@
 import { mapMutations } from 'vuex'
 
 export default {
-  mounted() {
-    this.$nextTick(() => {
+  created() {
+    if (process.client) {
       const resizeEvt =
         'orientationchange' in window ? 'orientationchange' : 'resize'
       const resetRecalc = () => {
@@ -20,12 +20,8 @@ export default {
         }
       }
       window.addEventListener(resizeEvt, resetRecalc.bind(this), false)
-      document.addEventListener(
-        'DOMContentLoaded',
-        resetRecalc.bind(this),
-        false
-      )
-    })
+      window.addEventListener('load', resetRecalc.bind(this), false)
+    }
   },
   methods: {
     ...mapMutations(['SET_ISPC'])

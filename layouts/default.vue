@@ -1,5 +1,5 @@
 <template>
-  <div class="layout">
+  <div v-if="isPc !== ''" class="layout">
     <Header />
     <!-- <view> -->
     <nuxt />
@@ -19,6 +19,11 @@ export default {
     Footer
   },
   mixins: [RecalcMixin],
+  computed: {
+    isPc() {
+      return this.$store.state.isPc
+    }
+  },
   methods: {
     ...mapMutations(['SET_ISPC'])
   }
