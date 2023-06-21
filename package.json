@@ -23,7 +23,7 @@
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^3.0.0-0",
     "ant-design-vue": "^1.1.10",
-    "nuxt": "^2.0.0",
+    "nuxt": "^3.4.3",
     "swiper": "^5.3.6",
     "vue-awesome-swiper": "^4.1.0",
     "vue-baidu-map": "^0.21.22",
